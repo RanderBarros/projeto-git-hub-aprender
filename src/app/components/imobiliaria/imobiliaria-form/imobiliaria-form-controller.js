@@ -1,4 +1,30 @@
+let cep = document.querySelector('#cep-cadastro');
+let rua = document.querySelector('#rua-cadastro');
+let bairro = document.querySelector('#bairro-cadastro');
+let cidade = document.querySelector('#cidade-cadastro');
+let estado = document.querySelector('#estado-cadastro');
+let limpaCampo = document.querySelectorAll('.inputs');
+
 ctrl = this;
+
+// Busca CEP
+cep.addEventListener('blur', function(e) {
+    let cepCadastro = e.target.value;
+    let script = document.createElement('script');
+    script.src = 'https://viacep.com.br/ws/'+cepCadastro+'/json/?callback=buscaCepForm';
+    document.body.appendChild(script);
+})
+// Função para buscar o CEP
+function buscaCepForm(resposta) {
+    if("erro" in resposta) {
+        alert('CEP não encontrado!');
+        return;
+    }
+    rua.value = resposta.logradouro;
+    bairro.value = resposta.bairro;
+    cidade.value = resposta.localidade;
+    estado.value = resposta.uf;
+}
 
 //Função para realizar o login na imobiliária
 function logar() {
@@ -41,18 +67,6 @@ cep.addEventListener('blur', function(e){
     document.body.appendChild(script); 
 })
 
-// Função para buscar o CEP
-
-function buscaCepForm(resposta) {
-    if("erro" in resposta) {
-        alert('CEP não encontrado!');
-        return;
-    }
-    inputRua.value = resposta.logradouro;
-    inputBairro.value = resposta.bairro;
-    inputCidade.value = resposta.localidade;
-    inputEstado.value = resposta.uf;
-}
 
 // Função para realizar a validação da autenticação do usuário na imobiliária
 function validarUsuarioCadastrado() {
