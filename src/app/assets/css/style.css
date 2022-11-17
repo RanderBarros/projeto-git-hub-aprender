@@ -1,0 +1,21 @@
+.plano-de-fundo {
+    background-image: url('../img/mansion.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.centralizar-card {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.esconderAlertaSucesso {
+   display: none; 
+}
+
+.esconderAlertaErro {
+    display: none; 
+ }

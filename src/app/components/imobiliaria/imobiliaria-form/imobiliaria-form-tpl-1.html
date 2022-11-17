@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" 
+          content="RANDER Home">
+    <meta name="author" 
+          content="Rander Barros">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1295/1295188.png">
+    <title>RANDER Home.</title>
+    <!-- Principal CSS do Bootstrap -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <!-- Estilos customizados para esse template -->
+    <link href="../../../assets/css/style.css"
+          rel="stylesheet">
+  </head>
+  <!-- Corpo do texto assumindo a classe do plano de fundo contendo uma imagem -->
+  <body class="plano-de-fundo">
+  <!-- Div para área de navegação do menu superior -->
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <img class="my-0 mr-md-auto" src="../../../assets/img/rander-big.png" width="110" height="70">
+      <img class="my-1 mr-md-auto" src="../../../assets/img/contato.png" width="200" height="70">
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="#">Aguas Claras</a>
+        <a class="p-2 text-dark" href="#">Guará</a>
+        <a class="p-2 text-dark" href="#">Taguatinga</a>
+        <a class="p-2 text-dark" href="#">Ceilândia</a>
+      </nav>
+      <a class="btn btn-outline-primary"
+         href="#"
+         data-toggle="modal"
+         data-target="#modal-centralizado"
+         onclick="limparDadosModal(); diminuirModal();">Entrar</a>
+    </div>
+      <!-- Card para tela de pesquisa inicial para realizar buscas  -->
+    <div class="card text-center centralizar-card mt-0">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <!-- Primeira aba da tela de pesquisa inicial para realizar buscas -->
+            <li class="nav-item">
+                <a class="nav-link active"
+                    id="comprar-tab"
+                    data-toggle="pill"
+                    href="#comprar"
+                    role="tab"
+                    aria-controls="comprar"
+                    aria-selected="true">Comprar</a>
+            </li>
+            <!-- Segunda aba da tela de pesquisa inicial para realizar buscas -->
+            <li class="nav-item">
+                <a class="nav-link"
+                    id="alugar-tab"
+                    data-toggle="pill"
+                    href="#alugar"
+                    role="tab"
+                    aria-controls="alugar"
+                    aria-selected="false">Alugar</a>
+            </li> 
+            <!-- Terceira aba da tela de pesquisa inicial para realizar buscas -->
+            <li class="nav-item">
+                <a class="nav-link"
+                    id="codigo-tab"
+                    data-toggle="pill"
+                    href="#codigo"
+                    role="tab"
+                    aria-controls="codigo"
+                    aria-selected="false">Código</a>
+            </li>     
+          </ul>
+        </div>
+        <div class="card-body">
+            <div class="tab-content"
+                 id="pills-tabContent">
+                <!-- Conteúdo da Primeira aba da tela de pesquisa inicial para realizar buscas -->
+                <div class="tab-pane fade show active"
+                     id="comprar"
+                     role="tabpanel"
+                     aria-labelledby="comprar-tab">
+                    <form>
+                        <div class="form-row align-items-center">
+                          <div class="col-sm-3 my-1">
+                              <select class="form-control">
+                                 <option>Tipo</option>
+                                 <option>Casa</option>
+                                 <option>Apartamento</option>
+                                 <option>Fazenda</option>
+                                 <option>Flat</option>
+                              </select>
+                          </div>
+                          <div class="col-sm-6 my-1">
+                            <div class="input-group">
+                                <input type="text"
+                                       class="form-control"
+                                       id="busca-comprar"
+                                       placeholder="Digite condomínio, região, bairro ou cidade"
+                                       required>
+                            </div>
+                          </div>
+                          <div class="col-auto my-1">
+                              <button type="submit" class="btn btn-outline-primary">Buscar</button>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            <!-- Conteúdo da Segunda aba da tela de pesquisa inicial para realizar buscas -->
+            <div class="tab-pane fade"
+                     id="alugar"
+                     role="tabpanel"
+                     aria-labelledby="alugar-tab">
+                    <form>
+                        <div class="form-row align-items-center">
+                          <div class="col-sm-3 my-1">
+                              <select class="form-control">
+                                 <option>Tipo</option>
+                                 <option>Casa</option>
+                                 <option>Apartamento</option>
+                                 <option>Fazenda</option>
+                                 <option>Flat</option>
+                              </select>
+                          </div>
+                          <div class="col-sm-6 my-1">
+                                <div class="input-group">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="busca-alugar"
+                                           placeholder="Digite condomínio, região, bairro ou cidade"
+                                           required>
+                                </div>
+                          </div>
+                          <div class="col-auto my-1">
+                              <button type="submit"
+                                      class="btn btn-outline-primary">Buscar</button>
+                          </div>
+                        </div>
+                    </form>
+            </div>
+            <!-- Conteúdo da Terceira aba da tela de pesquisa inicial para realizar buscas -->
+            <div class="tab-pane fade"
+                     id="codigo"
+                     role="tabpanel"
+                     aria-labelledby="codigo-tab">
+                    <form>
+                        <div class="form-row align-items-center">                          
+                          <div class="col-sm-4 my-1">
+                                <div class="input-group">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="busca-codigo"
+                                           placeholder="Preencha o código do imóvel." required>
+                                </div>
+                          </div>
+                          <div class="col-auto my-1">
+                              <button type="submit"
+                                      class="btn btn-outline-primary">Buscar</button>
+                          </div>
+                        </div>
+                    </form>
+            </div>
+       </div>
+     </div>
+    </div>  
+    <!-- Modal -->
+    <div class="modal"
+         id="modal-centralizado"
+         tabindex="-1"
+         role="dialog"
+         aria-labelledby="TituloModalCentralizado"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered"
+             style="width:1000px; margin: 0 auto;"
+             id="modal-entrar"
+             role="document">
+            <div class="modal-content">
+                <!-- Cabeçalho da modal -->
+                    <div class="modal-header">
+                    <div class="container" >
+                         <div class="row justify-content-md-center">
+                    <img src="../../../assets/img/rander-big.png" class="mx-auto" style="width: 200px;">
+                         </div>
+                      </div>
+                        <!-- Botão para fechamento da modal -->
+                        <button type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Fechar"
+                                onclick="fecharModal()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <!-- Exibir mensagem de sucesso -->
+                    <div class="alert alert-success esconderAlertaSucesso text-center"
+                         role="alert"
+                         id="sucesso">
+                        Login realizado com sucesso!
+                    </div>
+
+                    <!-- Exibir mensagem de erro -->
+                    <div class="alert alert-danger esconderAlertaErro text-center"
+                    role="alert"
+                    id="erro">
+                    Login inválido!
+                    </div>
+
+                    <!-- Corpo da modal -->
+                    <div class="modal-body">
+                        <ul class="nav nav-pills mb-3"
+                            role="tablist"
+                            id="aba-modal-entrar"> 
+                            <!-- Primeira aba da modal -->
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                   id="login-tab"
+                                   data-toggle="pill"
+                                   href="#login"
+                                   role="tab"
+                                   aria-controls="login"
+                                   aria-selected="true"
+                                   onclick="diminuirModal()">Login</a>
+                            </li>
+                            <!-- Segunda aba da modal -->
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   id="cadastro-tab"
+                                   data-toggle="pill"
+                                   href="#cadastro"
+                                   role="tab"
+                                   aria-controls="cadastro"
+                                   aria-selected="false"
+                                   onclick="aumentarModal()">Cadastro</a>
+                            </li>                                                                         
+                        </ul>
+                        <div class="tab-content"
+                             id="pills-tabContent">
+                            <!-- Conteúdo da primeira aba da modal -->
+                            <div class="tab-pane fade show active"
+                                 id="login"
+                                 role="tabpanel"
+                                 aria-labelledby="login-tab">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="email-login">Endereço de email</label>
+                                            <input type="email"
+                                                   class="form-control"
+                                                   id="email-login"
+                                                   placeholder="Digite o Email para realizar o login"
+                                                   required>
+                                    </div>
+                                        <div class="form-group">
+                                            <label for="senha-login">Senha</label>
+                                            <input type="password"
+                                                   class="form-control"
+                                                   id="senha-login"
+                                                   placeholder="Digite sua senha para realizar o login"
+                                                   required>
+                                                   <p><a href="#" class="tooltip-test" title="Recuperar senha">Esqueci minha senha</a></p>
+                                        </div>
+                                </form> 
+                                <button type="submit"
+                                        class="btn btn-primary"
+                                        onclick="logar()">Continue</button>
+                            </div>
+                            <!-- Conteúdo da segunda aba da modal -->
+                            <div class="tab-pane fade"
+                                id="cadastro"
+                                role="tabpanel"
+                                aria-labelledby="cadastro-tab">
+                                <h5> <span class="badge badge-primary">Dados de Login</span></h5>
+                                <div class="form-row">
+                                    <!-- <h5 class="modal-title">Dados de Login</h5><br> -->
+                                    <div class="col-md-5 mb-3">
+                                        <label for="validationDefault01">CPF</label>
+                                        <input type=" text" class="form-control" id="validationDefault01" placeholder="Formato XXX.XXX.XXX-XX" required>
+                                    </div>
+                                    <div class="col-md-7 mb-3">
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationDefault03">E-mail</label>
+                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Digite seu email" required>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                         <label for="validationDefault04">Confirmar</label>
+                                         <input type="text" class="form-control" id="validationDefault02" placeholder="Confirmar seu email" required>
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label for="validationDefault05">Senha</label>
+                                        <input type="text" class="form-control" id="validationDefault02" placeholder="Senha" required>
+                                   </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label for="validationDefault06">Confirmar</label>
+                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Confirmação" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">                                    
+                                  <div class="col-md-12 mb-3">
+                                    <h5> <span class="badge badge-primary">Dados de Cadastro</span></h5>
+                                  </div>   
+                                    <div class="col-md-5 mb-3">
+                                        <label for="validationDefault07">Primeiro nome</label>
+                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Digite seu primeiro nome" required>
+                                    </div>
+                                    <div class="col-md-7 mb-3">
+                                         <label for="validationDefault08">Sobrenome</label>
+                                         <input type="text" class="form-control" id="validationDefault02" placeholder="Digite seu sobrenome" required>
+                                    </div>
+                                    <div class="col-md-5 mb-3">
+                                        <label for="validationDefault09">Nascimento</label>
+                                        <input type="text" class="form-control" id="validationDefault02" placeholder="Formato XX/XX/XXXX" required>
+                                   </div> 
+                                   <div class="col-md-3 mb-3">
+                                       <label for="validationDefault10">RG</label>
+                                       <input type="text" class="form-control" id="validationDefault02" placeholder="Digite seu RG" required>
+                                  </div>
+                                  <div class="col-md-4 mb-3">
+                                    <div class="input-group mb-3">
+                                       <label for="validationDefault18">Sexo</label>
+                                       <div class="input-group-prepend">
+                                           <label class="input-group-text" for="inputGroupSelect01">Sexo</label>
+                                           <select class="custom-select" id="inputGroupSelect01">
+                                                  <option selected>Escolher...</option>
+                                                  <option value="1">Masculino</option>
+                                                  <option value="2">Feminino</option>
+                                                  <option value="3">Prefiro não declarar</option>
+                                          </select>
+                                      </div>
+                                    </div>                                      
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <label for="validationDefault12">CEP</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="txtCep"
+                                           placeholder="UF"
+                                           required>
+                                  </div>
+                                  <div class="col-md-7 mb-3">
+                                         <label for="validationDefault13">Endereço</label>
+                                         <input type="text" class="form-control" id="validationDefault02" placeholder="Digite seu Endereço" required>
+                                  </div> 
+                                  <div class="col-md-2 mb-3">
+                                        <label for="validationDefault14">Nº</label>
+                                        <input type="text" class="form-control" id="validationDefault02" placeholder="Número" required>
+                                  </div>
+                                  <div class="col-md-4 mb-3">
+                                    <label for="validationDefault15">Bairro</label>
+                                    <input type="text" class="form-control" id="validationDefault02" placeholder="Bairro" required>
+                                  </div>
+                                  <div class="col-md-4 mb-3">
+                                         <label for="validationDefault16">Complemento</label>
+                                         <input type="text" class="form-control" id="validationDefault02" placeholder="ex: casa, apartamento, fundos" required>
+                                  </div> 
+                                  <div class="col-md-4 mb-3">
+                                        <label for="validationDefault17">Cidade</label>
+                                        <input type="text" class="form-control" id="validationDefault02" placeholder="Digite a cidade" required>
+                                  </div>
+                                  <div class="col-md-4 mb-3">
+                                    <div class="input-group mb-3">
+                                       <label for="validationDefault18">Estado</label>
+                                       <div class="input-group-prepend">
+                                           <label class="input-group-text" for="inputGroupSelect01">Estado</label>
+                                           <select class="custom-select" id="inputGroupSelect01">
+                                                  <option selected>Escolher...</option>
+                                                  <option value="1">Distrito Federal</option>
+                                                  <option value="2">Goiás</option>
+                                                  <option value="3">São Paulo</option>
+                                                  <option value="4">Rio de Janeiro</option>
+                                                  <option value="5">Santa Catarina</option>
+                                                  <option value="6">Bahia</option>
+                                                  <option value="7">Amazonas</option>
+                                                  <option value="8">Maranhão</option>
+                                                  <option value="9">Pernambuco</option>
+                                                  <option value="10">Rio Grande do Sul</option>
+                                                  <option value="11">Minas Gerais</option>
+                                                  <option value="12">Tocantins</option>
+                                          </select>
+                                      </div>
+                                    </div>                                      
+                                  </div>
+                                  <div class="col-md-4 mb-3">
+                                        <label for="validationDefault19">DDD+Telefone</label>
+                                        <input type="text" class="form-control" id="validationDefault02" placeholder="Telefone residencial ou comercial" required>
+                                  </div> 
+                                  <div class="col-md-4 mb-3">
+                                        <label for="validationDefault20">DDD+Celular</label>
+                                        <input type="text" class="form-control" id="validationDefault02" placeholder="Número do celular" required>
+                                  </div>                                        
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                      <label class="form-check-label" for="invalidCheck">
+                                        Concordo com os termos e condições
+                                      </label>
+                                      <div class="invalid-feedback">
+                                        Você deve concordar, antes de continuar.
+                                      </div>
+                                    </div>
+                                </div>
+                                <button type="submit"
+                                        class="btn btn-primary btn-warning">Cadastrar
+                                </button>
+
+                            </div>                            
+                        </div>
+                    </div>                  
+
+            </div>
+        </div>
+    </div>
+    <!-- Principal JavaScript do Bootstrap
+    ================================================== -->
+    <!-- Foi colocado no final para a página carregar mais rápido -->
+    <script src="imobiliaria-form-controller.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+  </body>
+</html>
