@@ -19,3 +19,122 @@
 .esconderAlertaErro {
     display: none; 
  }
+
+ .cor-de-fonte {
+    color: whitesmoke;
+}
+
+.botao-azul {
+    background-color: #395870
+}
+
+.cor-card-body {
+    background-color: ghostwhite;
+}
+
+.esconderAlertaSucesso {
+    display: none;
+}
+
+.esconderAlertaErro {
+    display: none;
+}
+
+a:focus {
+    outline: none !important;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--highligth-text);
+}
+
+.modalEstilizada {
+    background-color: #395870;
+}
+
+.inputLogin {
+    padding: 5px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    width: 50%;
+    
+}
+
+.botaoLogin {
+    border: none;
+    padding: auto;
+    color: whitesmoke;
+    box-sizing: border-box;
+}
+
+label {
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+#agreement {
+    margin-right: none;
+}
+
+#agreemet, #agreement-label {
+    display: inline-block;
+    width: auto;
+}
+
+/* Validações */
+.error-validation {
+    color: darkred;
+    position: absolute;
+    top: 57px;
+    font-size: .8rem;
+}
+
+.template {
+    display: none;
+}
+
+.span-required {
+    font-size: 12px;
+    color: red;
+    display: none;
+    margin: 3px 0 0 1px;
+    
+}
+
+.cadastro-form {
+    overflow: auto;
+}
+
+.inputs {
+    padding: 6px 3px;
+    outline: none;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: .3s;
+}
+
+.inputs:focus {
+    border-color: #395870;
+}
+
+.whatsapp-link {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #07A661;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 1px 1px 2px #888;
+    z-index: 1000;
+}
+
+.fa-whatsapp {
+    margin-top: 16px;
+} 

@@ -248,6 +248,8 @@
                                             <input type="email"
                                                    class="form-control"
                                                    id="email-login"
+                                                   maxlength="35"
+                                                   aria-describedby="email-help"
                                                    placeholder="Digite o Email para realizar o login"
                                                    required>
                                     </div>
@@ -260,7 +262,7 @@
                                                    required>
                                                    <p><a href="#" class="tooltip-test" title="Recuperar senha">Esqueci minha senha</a></p>
                                         </div>
-                                </form> 
+                                </form>
                                 <button type="submit"
                                         class="btn btn-primary"
                                         onclick="logar()">Continue</button>
@@ -273,48 +275,103 @@
                                 <h5> <span class="badge badge-primary">Dados de Login</span></h5>
                                 <div class="form-row">
                                     <!-- <h5 class="modal-title">Dados de Login</h5><br> -->
-                                    <div class="col-md-5 mb-3">
-                                        <label for="validationDefault01">CPF</label>
-                                        <input type=" text" class="form-control" id="validationDefault01" placeholder="Formato XXX.XXX.XXX-XX" required>
+                                    <div class="col-md-5 mb-3 inputs" oninput="cpfValidate()">
+                                        <label for="cpf-cadastro">CPF</label>
+                                        <input type=" text"
+                                               class="form-control required"
+                                               name="cpf"
+                                               maxlength="14"
+                                               id="cpf-cadastro"
+                                               placeholder="Formato XXX.XXX.XXX-XX"
+                                               autocomplete="off"
+                                               value=""
+                                               required>
                                     </div>
                                     <div class="col-md-7 mb-3">
                                     </div>
-                                    <div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">E-mail</label>
-                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Digite seu email" required>
+                                    <div class="col-md-4 mb-3" oninput="emailValidate()">
+                                         <label for="email-cadastro">Email</label>
+                                         <div class="input-group">
+                                           <input type="email"
+                                                  class="form-control required" 
+                                                  id="inputEmail"
+                                                  maxlength="35"
+                                                  placeholder="Informe seu email" 
+                                                  aria-describedby="inputGroupPrepend" required>
+                                           <span class="span-required">Digite um Email válido!</span>
+                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                          <label for="validationDefault04">Confirmar</label>
                                          <input type="text" class="form-control" id="validationDefault02" placeholder="Confirmar seu email" required>
                                     </div>
                                     <div class="col-md-2 mb-3">
-                                        <label for="validationDefault05">Senha</label>
-                                        <input type="text" class="form-control" id="validationDefault02" placeholder="Senha" required>
-                                   </div>
-                                    <div class="col-md-2 mb-3">
-                                        <label for="validationDefault06">Confirmar</label>
-                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Confirmação" required>
+                                         <label for="senha-cadastro">Senha</label>
+                                         <input type="password"
+                                                class="form-control required" oninput="senhaCadastroValidate()"
+                                                id="senha-cadastro"
+                                                name="campoSenha"
+                                                maxlength="20"
+                                                placeholder="Senha"
+                                                required>
+                                         <span class="span-required">Senha deve ter no mínimo 8 dígitos!</span>
                                     </div>
-                                </div>
+                                         <div class="col-md-2 mb-3">
+                                              <label for="confirma-senha-cadastro">Confirme a senha</label>
+                                              <input type="password"
+                                                     class="form-control required" oninput="comparaSenha()"
+                                                     id="confirma-senha-cadastro"
+                                                     maxlength="20"
+                                                     placeholder="Confirme a senha"
+                                                     required>
+                                              <span class="span-required">As senhas devem ser idênticas!</span>       
+                                         </div>
+                                    </div>
                                 <div class="form-row">                                    
                                   <div class="col-md-12 mb-3">
                                     <h5> <span class="badge badge-primary">Dados de Cadastro</span></h5>
                                   </div>   
                                     <div class="col-md-5 mb-3">
-                                        <label for="validationDefault07">Primeiro nome</label>
-                                        <input type="text" class="form-control" id="validationDefault01" placeholder="Digite seu primeiro nome" required>
+                                         <label for="nome-cadastro">Primeiro nome</label>
+                                         <input type="text"
+                                                class="form-control required"
+                                                id="nome-cadastro"
+                                                maxlength="12"
+                                                placeholder="Digite seu primeiro nome"
+                                                value=""
+                                                required>
+                                         <span class="span-required">O nome deve ter no mínimo 3 caracteres!</span>       
                                     </div>
                                     <div class="col-md-7 mb-3">
-                                         <label for="validationDefault08">Sobrenome</label>
-                                         <input type="text" class="form-control" id="validationDefault02" placeholder="Digite seu sobrenome" required>
+                                         <label for="sobre-nome">Sobrenome</label>
+                                         <input type="text"
+                                                class="form-control required"
+                                                id="sobre-nome"
+                                                maxlength="25"
+                                                placeholder="Digite seu sobrenome"
+                                                value=""
+                                                required>
                                     </div>
-                                    <div class="col-md-5 mb-3">
-                                        <label for="validationDefault09">Nascimento</label>
-                                        <input type="text" class="form-control" id="validationDefault02" placeholder="Formato XX/XX/XXXX" required>
-                                   </div> 
-                                   <div class="col-md-3 mb-3">
-                                       <label for="validationDefault10">RG</label>
-                                       <input type="text" class="form-control" id="validationDefault02" placeholder="Digite seu RG" required>
+                                    <div class="col-md-5 mb-3" oninput="nascimentoValidate()">
+                                        <label for="nascimento-cadastro">Data de Nascimento</label>
+                                        <input type="date"
+                                           class="form-control required" 
+                                           id="nascimento-cadastro"
+                                           autocomplete="off"
+                                           maxlength="8"
+                                           value="" required>
+                                        <span class="span-required">Informe uma data válida!</span>
+                                    </div>
+                                   <div class="col-md-3 mb-3" oninput="rgValidate()">
+                                       <label for="rg-cadastro">RG</label>
+                                       <input type="text" 
+                                       class="form-control required" 
+                                       id="rg-cadastro"
+                                       autocomplete="off"
+                                       maxlength="9"
+                                       placeholder="Informe seu RG" 
+                                       value="" required>
+                                   <span class="span-required">o RG deve ter 7 dígitos!</span>
                                   </div>
                                   <div class="col-md-4 mb-3">
                                     <div class="input-group mb-3">
@@ -330,56 +387,61 @@
                                       </div>
                                     </div>                                      
                                   </div>
-                                  <div class="col-md-3 mb-3">
-                                    <label for="validationDefault12">CEP</label>
+                                  <div class="col-md-3 mb-3" oninput="cepValidate()">
+                                    <label for="cep-cadastro">CEP</label>
                                     <input type="text"
-                                           class="form-control"
-                                           id="txtCep"
-                                           placeholder="UF"
+                                           class="form-control required"
+                                           name="cep"
+                                           id="cep-cadastro"
+                                           maxlength="9"
+                                           autocomplete="off"
+                                           placeholder="Informe seu CEP"
                                            required>
+                                    <span class="span-required">o CEP deve ter 8 dígitos!</span>     
                                   </div>
                                   <div class="col-md-7 mb-3">
-                                         <label for="validationDefault13">Endereço</label>
-                                         <input type="text" class="form-control" id="validationDefault02" placeholder="Digite seu Endereço" required>
-                                  </div> 
-                                  <div class="col-md-2 mb-3">
-                                        <label for="validationDefault14">Nº</label>
-                                        <input type="text" class="form-control" id="validationDefault02" placeholder="Número" required>
+                                       <label for="rua-cadastro">Endereço</label>
+                                       <input type="text"
+                                              class="form-control required"
+                                              id="rua-cadastro"
+                                              name="rua" disabled>
+                                  </div>
+                                  <div class="col-md-2 mb-3" oninput="cepValidate()">
+                                       <label for="casa-cadastro">Nº</label>
+                                       <input type="text"
+                                              class="form-control required" 
+                                              id="casa-cadastro"
+                                              name="numero"
+                                              autocomplete="off"
+                                              placeholder="Número"
+                                              maxlength="6" required>
                                   </div>
                                   <div class="col-md-4 mb-3">
-                                    <label for="validationDefault15">Bairro</label>
-                                    <input type="text" class="form-control" id="validationDefault02" placeholder="Bairro" required>
+                                    <label for="bairro-cadastro">Bairro</label>
+                                    <input type="text"
+                                           class="form-control required"
+                                           name="bairro"
+                                           id="bairro-cadastro" disabled>
                                   </div>
                                   <div class="col-md-4 mb-3">
                                          <label for="validationDefault16">Complemento</label>
                                          <input type="text" class="form-control" id="validationDefault02" placeholder="ex: casa, apartamento, fundos" required>
                                   </div> 
                                   <div class="col-md-4 mb-3">
-                                        <label for="validationDefault17">Cidade</label>
-                                        <input type="text" class="form-control" id="validationDefault02" placeholder="Digite a cidade" required>
+                                       <label for="cidade-cadastro">Cidade</label>
+                                       <input type="text"
+                                              class="form-control required"
+                                              id="cidade-cadastro"
+                                              name="cidade"
+                                              disabled>
                                   </div>
                                   <div class="col-md-4 mb-3">
-                                    <div class="input-group mb-3">
-                                       <label for="validationDefault18">Estado</label>
-                                       <div class="input-group-prepend">
-                                           <label class="input-group-text" for="inputGroupSelect01">Estado</label>
-                                           <select class="custom-select" id="inputGroupSelect01">
-                                                  <option selected>Escolher...</option>
-                                                  <option value="1">Distrito Federal</option>
-                                                  <option value="2">Goiás</option>
-                                                  <option value="3">São Paulo</option>
-                                                  <option value="4">Rio de Janeiro</option>
-                                                  <option value="5">Santa Catarina</option>
-                                                  <option value="6">Bahia</option>
-                                                  <option value="7">Amazonas</option>
-                                                  <option value="8">Maranhão</option>
-                                                  <option value="9">Pernambuco</option>
-                                                  <option value="10">Rio Grande do Sul</option>
-                                                  <option value="11">Minas Gerais</option>
-                                                  <option value="12">Tocantins</option>
-                                          </select>
-                                      </div>
-                                    </div>                                      
+                                      <label for="estado-cadastro">Estado</label>
+                                      <input type="text" 
+                                             class="form-control required"
+                                             name="estado" 
+                                             id="estado-cadastro"
+                                             disabled>                          
                                   </div>
                                   <div class="col-md-4 mb-3">
                                         <label for="validationDefault19">DDD+Telefone</label>
