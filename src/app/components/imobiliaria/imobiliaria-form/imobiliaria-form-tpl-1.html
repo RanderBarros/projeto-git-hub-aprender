@@ -22,7 +22,7 @@
   <!-- Corpo do texto assumindo a classe do plano de fundo contendo uma imagem -->
   <body class="plano-de-fundo">
   <!-- Div para área de navegação do menu superior -->
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
       <img class="my-0 mr-md-auto" src="../../../assets/img/rander-big.png" width="110" height="70">
       <img class="my-1 mr-md-auto" src="../../../assets/img/contato.png" width="200" height="70">
       <nav class="my-2 my-md-0 mr-md-3">
@@ -36,7 +36,12 @@
          data-toggle="modal"
          data-target="#modal-centralizado"
          onclick="limparDadosModal(); diminuirModal();">Entrar</a>
-    </div>
+      </div>
+      <div class="banner">
+        <video autoplay muted loop>
+          <source src="/src/app/assets/movie/ferrari-senna.mp4" type="video/mp4">
+        </video>
+      </div>
       <!-- Card para tela de pesquisa inicial para realizar buscas  -->
     <div class="card text-center centralizar-card mt-0">
         <div class="card-header">
@@ -73,7 +78,7 @@
             </li>     
           </ul>
         </div>
-        <div class="card-body">
+        <div class="card-body cor-card-body">
             <div class="tab-content"
                  id="pills-tabContent">
                 <!-- Conteúdo da Primeira aba da tela de pesquisa inicial para realizar buscas -->
@@ -85,11 +90,15 @@
                         <div class="form-row align-items-center">
                           <div class="col-sm-3 my-1">
                               <select class="form-control">
-                                 <option>Tipo</option>
-                                 <option>Casa</option>
-                                 <option>Apartamento</option>
-                                 <option>Fazenda</option>
-                                 <option>Flat</option>
+                                <option>Selecione o Tipo</option>
+                                <option>Casa</option>
+                                <option>Apartamento</option>
+                                <option>Duplex</option>
+                                <option>Fazenda</option>
+                                <option>Flat</option>
+                                <option>Galpões</option>
+                                <option>Loja</option>
+                                <option>Chácara</option>
                               </select>
                           </div>
                           <div class="col-sm-6 my-1">
@@ -119,8 +128,12 @@
                                  <option>Tipo</option>
                                  <option>Casa</option>
                                  <option>Apartamento</option>
+                                 <option>Duplex</option>
                                  <option>Fazenda</option>
                                  <option>Flat</option>
+                                 <option>Galpões</option>
+                                 <option>Loja</option>
+                                 <option>Chácara</option>
                               </select>
                           </div>
                           <div class="col-sm-6 my-1">
@@ -444,12 +457,27 @@
                                              disabled>                          
                                   </div>
                                   <div class="col-md-4 mb-3">
-                                        <label for="validationDefault19">DDD+Telefone</label>
-                                        <input type="text" class="form-control" id="validationDefault02" placeholder="Telefone residencial ou comercial" required>
+                                        <label for="telefone-cadastro">DDD+Telefone</label>
+                                        <input type="text"
+                                               class="form-control required"
+                                               id="telefone-cadastro"
+                                               autocomplete="off"
+                                               maxlength="13"
+                                               value=""
+                                               placeholder="Telefone residencial ou comercial" required>
+                                        <span class="span-required">Informe um telefone residencial válido!</span>
                                   </div> 
                                   <div class="col-md-4 mb-3">
-                                        <label for="validationDefault20">DDD+Celular</label>
-                                        <input type="text" class="form-control" id="validationDefault02" placeholder="Número do celular" required>
+                                        <label for="celular-cadastro">DDD+Celular</label>
+                                        <input type="text"
+                                               class="form-control required"
+                                               id="celular-cadastro"
+                                               autocomplete="off"
+                                               maxlength="14"
+                                               value=""
+                                               placeholder="Número do celular"
+                                               required>
+                                        <span class="span-required">Informe um celular válido!</span>
                                   </div>                                        
                                 </div>
                                 <div class="form-group">

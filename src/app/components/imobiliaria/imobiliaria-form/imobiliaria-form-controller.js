@@ -87,6 +87,20 @@ celularCadastro.addEventListener('keypress', () => {
     }
 })
 
+const telefoneCadastro = document.getElementById('telefone-cadastro')
+
+telefoneCadastro.addEventListener('keypress', () => {
+    let telefoneCadastrolength = telefoneCadastro.value.length
+
+    if (telefoneCadastrolength === 0) {
+        telefoneCadastro.value += '('
+    }else if (telefoneCadastrolength === 3)
+    telefoneCadastro.value += ')'
+     else if (telefoneCadastrolength === 9){
+        telefoneCadastro.value += '-'
+    }
+})
+
 // Mascára dos campos de cadastro (final)
 
 //Função para realizar o login na imobiliária (inicio)
@@ -96,11 +110,6 @@ function logar() {
     ctrl.senha = document.getElementById("senha-login").value;
     carregarUsuariosCadastrados();
     validarUsuarioCadastrado();
-    buscaCepForm();
-    limparDadosModal();
-    diminuirModal();
-    aumentarModal();
-    fecharModal();
 } 
 
 //Função para realizar o login na imobiliária (final)
@@ -257,6 +266,15 @@ function celularValidate(){
     }
 }
 
+function telefoneValidate(){
+    if(campos[6].value.length < 10)
+    {
+        setError(5);
+    } else {
+        removeError(5);
+    }
+}
+
 function cepValidate(){
     if(campos[7].value.length < 9)
     {
@@ -292,6 +310,7 @@ const inputCpfCadastro = document.querySelector("#cpf-cadastro");
 const inputRgCadastro = document.querySelector("#rg-cadastro");
 const inputDataNascimentoCadastro = document.querySelector("#nascimento-cadastro");
 const inputCelularCadastro = document.querySelector("#celular-cadastro");
+const inputTelefoneCadastro = document.querySelector("#telefone-cadastro");
 const inputCepCadastro = document.querySelector("#cep-cadastro");
 const inputCasaCadastro = document.querySelector("#casa-cadastro");
 

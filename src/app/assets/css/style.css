@@ -1,7 +1,31 @@
 .plano-de-fundo {
-    background-image: url('../img/mansion.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner video {
+    position: fixed;
+    top: 10%;    
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+} 
+
+.banner .content {
+    position: relative;
+    z-index: 1;
+    max-width: 100px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .centralizar-card {
